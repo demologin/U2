@@ -1,12 +1,10 @@
 package com.javarush.module2.lesson02.calc;
 
-public interface Operation {
+import com.javarush.module2.lesson02.calc.api.Add;
+import com.javarush.module2.lesson02.calc.api.Div;
+import com.javarush.module2.lesson02.calc.api.Mul;
+import com.javarush.module2.lesson02.calc.api.Sub;
 
-    Var add(Var other);
+public interface Operation extends Add, Sub, Mul, Div {
 
-    Var sub(Var other);
-
-    Var mul(Var other);
-
-    Var div(Var other);
 }
