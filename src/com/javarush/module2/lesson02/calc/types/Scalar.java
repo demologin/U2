@@ -27,7 +27,7 @@ public class Scalar extends Var {
 		return new Scalar(this.value + other.value);
 	}
 
-	public Var add(Vector other) {
+	public Var add(VectorOld other) {
 		return other.add(this);
 	}
 

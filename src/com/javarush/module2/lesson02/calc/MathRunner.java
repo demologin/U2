@@ -1,9 +1,7 @@
 package com.javarush.module2.lesson02.calc;
 
-import com.javarush.module2.lesson02.calc.types.Scalar;
 import com.javarush.module2.lesson02.calc.types.Var;
 import com.javarush.module2.lesson02.calc.types.VariableTypes;
-import com.javarush.module2.lesson02.calc.types.Vector;
 
 public class MathRunner {
 	public static void main(String[] args) {
