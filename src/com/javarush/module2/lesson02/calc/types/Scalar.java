@@ -31,11 +31,9 @@ public class Scalar extends Var {
 		return other.add(this);
 	}
 
-
 	public Var sub(Scalar other) {
 		return new Scalar(this.value - other.value);
 	}
-
 
 	public Var mul(Scalar other) {
 		return new Scalar(this.value * other.value);
