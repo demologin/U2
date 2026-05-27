@@ -1,4 +1,7 @@
-package com.javarush.module2.lesson02.calc;
+package com.javarush.module2.lesson02.calc.types;
+
+import com.javarush.module2.lesson02.calc.api.Operation;
+import com.javarush.module2.lesson02.calc.exception.CalcException;
 
 public abstract class Var implements Operation {
 

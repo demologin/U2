@@ -1,4 +1,6 @@
-package com.javarush.module2.lesson02.calc;
+package com.javarush.module2.lesson02.calc.types;
+
+import com.javarush.module2.lesson02.calc.exception.CalcException;
 
 import java.util.Arrays;
 
@@ -25,24 +27,23 @@ public class Vector extends Var {
         }
     }
 
-    @Override
-    public Var add(Var other) {
-        if (other instanceof Scalar scalar) {
-            double[] result = this.values.clone();
-            for (int i = 0; i < result.length; i++) {
-                result[i] += scalar.getValue();
-            }
-            return new Vector(result);
-        } else if (other instanceof Vector vector) {
-            if (this.values.length == vector.values.length) {
+    public Var add(Vector other) {
+            if (this.values.length == other.values.length) {
                 double[] result = this.values.clone();
                 for (int i = 0; i < result.length; i++) {
-                    result[i] += vector.values[i];
+                    result[i] += other.values[i];
                 }
                 return new Vector(result);
             }
+            throw new CalcException("Vectors do not have the same length");
+    }
+
+    public Var add(Scalar value) {
+        double[] result = this.values.clone();
+        for (int i = 0; i < result.length; i++) {
+            result[i] += value.getValue();
         }
-        return super.add(other);
+        return new Vector(result);
     }
 
     @Override
