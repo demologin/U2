@@ -5,13 +5,9 @@ import com.javarush.module2.lesson02.calc.exception.CalcException;
 import java.lang.reflect.Constructor;
 
 public enum VariableTypes {
-	SCALAR("-?\\d+(\\.\\d+)?", Scalar.class),
-	VECTOR("\\[\\d+(,\\d+)*\\]", Vector.class),
-	MATRIX("\\[+\\d+(,\\d+)*\\]+", Matrix.class),
-	;
-//	MATRIX(M),
-
-//	[[1,2,3],[4,5,6],[7,8,9]]
+	SCALAR("^-?\\d+(\\.\\d+)?$", Scalar.class),
+	VECTOR("^\\[\\d+(,\\d+)*\\]$", Vector.class),
+	MATRIX("^\\[((\\[\\d+(,\\d)*\\])+,*)*\\]$", Matrix.class);
 
 	private String regexp;
 	private Class<? extends Var> type;
@@ -32,7 +28,7 @@ public enum VariableTypes {
 
 	public static Var getVar(String string) {
 		for ( VariableTypes var : VariableTypes.values() ) {
-			if ( var.regexp.equals(string) ) {
+			if ( string.matches(var.regexp) ) {
 				return var.getInstance(string);
 			}
 		}

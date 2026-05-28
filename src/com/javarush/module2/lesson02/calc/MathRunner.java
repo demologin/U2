@@ -5,9 +5,10 @@ import com.javarush.module2.lesson02.calc.types.VariableTypes;
 
 public class MathRunner {
 	public static void main(String[] args) {
-		Var left = VariableTypes.getVar(args[ 0 ]);
-		String operation = args[ 1 ];
-		Var right = VariableTypes.getVar(args[ 2 ]);
+		String[] arguments = {"[[1,2,3],[4,5,6]]","*","[1,2,3]"};
+		Var left = VariableTypes.getVar(arguments[ 0 ]);
+		String operation = arguments[ 1 ];
+		Var right = VariableTypes.getVar(arguments[ 2 ]);
 
 		Var result = null;
 		switch ( operation ) {
@@ -28,6 +29,10 @@ public class MathRunner {
 				break;
 		}
 
-		System.out.println(args + " = " + result);
+		for ( int i = 0; i < arguments.length; i++ ) {
+			System.out.print(arguments[i] + " ");
+		}
+
+		System.out.println("= " + result);
 	}
 }
