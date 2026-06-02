@@ -18,6 +18,7 @@ public class MathRunner {
 //        Var right =new Vector(new double[]{1,2,3,4});
         Var right =new Matrix(new double[][]{{1, 2}, {3, 4}});
 
+
         ActionProcessing process = new ActionProcessing();
 
         var resylt =  process.plus(left, right);
