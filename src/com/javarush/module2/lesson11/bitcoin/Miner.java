@@ -16,7 +16,7 @@ public class Miner implements Runnable {
 
     private static int mineOneCoin() {
         try {
-            Thread.sleep(1);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
