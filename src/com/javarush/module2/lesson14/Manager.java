@@ -21,7 +21,7 @@ public class Manager {
     }
 
     public void addCustomer() {
-        countIn.incrementAndGet();
+        countIn.getAndIncrement();
         if (countIn.get() > plan) {
             throw new RuntimeException("Inconsistent state in");
         }
