@@ -1,4 +1,4 @@
-package com.javarush.module2.lesson02.calc;
+package com.javarush.module2.lesson02.calc.exception;
 
 public class CalcException extends RuntimeException {
 
